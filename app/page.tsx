@@ -5,6 +5,8 @@ import Link from "next/link"
 import Image from "next/image"
 // Icons
 import { Leaf, Package, Recycle, ShieldCheck, Star, Users } from "lucide-react"
+// Images
+import LogoImage from "@/public/img/logo.jpg"
 
 export default function LandingPage() {
   // State
@@ -91,7 +93,7 @@ export default function LandingPage() {
               </div>
               <div className="flex items-center justify-center">
                 <Image
-                  src="/placeholder.svg?height=400&width=400"
+                  src={LogoImage}
                   width={400}
                   height={400}
                   alt="Hero Image"
