@@ -7,6 +7,10 @@ import Image from "next/image"
 import { Leaf, Package, Recycle, ShieldCheck, Star, Users } from "lucide-react"
 // Images
 import LogoImage from "@/public/img/logo.jpg"
+import EcoFriendlyImage from "@/public/img/eco-friendly-image.jpeg"
+import Product1 from "@/public/img/Product1.jpeg"
+import Product2 from "@/public/img/Product2.jpeg"
+import Product3 from "@/public/img/Product3.jpeg"
 
 export default function LandingPage() {
   // State
@@ -18,16 +22,20 @@ export default function LandingPage() {
 
   // Colors
   const primaryColor = "#e1dcd5"
-  const primaryDarker = "#c5bdb3"
+  const primaryDarker = "#4caf50"
   const textDark = "#333333"
+  const lightBackground = "#f1f8e9"
+
+  // Product Images
+  const productsImages = [Product1, Product2, Product3];
 
   return (
     <div className="flex min-h-screen flex-col">
       {/* Navbar */}
-      <header className="sticky top-0 z-40 border-b bg-white shadow-sm">
+      <header className="sticky top-0 z-40 border-b border-white bg-white shadow-sm">
         <div className="container mx-auto flex h-16 items-center justify-between py-4 px-4">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <div className="cursor-pointer flex items-center gap-2">
             <Package className="h-6 w-6" style={{ color: primaryDarker }} />
             <span className="text-xl font-bold" style={{ color: textDark }}>
               Lamsa
@@ -53,17 +61,19 @@ export default function LandingPage() {
             </Link>
           </nav>
           {/* Commander Button */}
-          <button
-            className="rounded-md px-4 py-2 text-sm font-medium text-gray-900 shadow-sm hover:opacity-90 transition-colors"
+          <Link
+            href={'https://l-artisan.youcan.store/products/starter-pack-1'}
+            target="_blank"
+            className="cursor-pointer rounded-md px-4 py-2 text-sm font-medium shadow-sm hover:opacity-90 transition-colors text-white"
             style={{ backgroundColor: primaryDarker }}
           >
             Commander
-          </button>
+          </Link>
         </div>
       </header>
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-14 max-md:py-20" style={{ backgroundColor: "#f8f6f3" }}>
+        <section className="w-full py-14 max-md:py-20" style={{ backgroundColor: lightBackground }}>
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
               <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
@@ -80,15 +90,20 @@ export default function LandingPage() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center lg:justify-start">
-                  <button
-                    className="rounded-md px-4 py-2 text-sm font-medium text-gray-900 shadow-sm hover:opacity-90 transition-colors"
+                  <Link
+                    href={'https://l-artisan.youcan.store/products/starter-pack-1'}
+                    target="_blank"
+                    className="cursor-pointer rounded-md px-4 py-2 text-sm font-medium text-white shadow-sm hover:opacity-90 transition-colors"
                     style={{ backgroundColor: primaryDarker }}
                   >
                     Découvrir nos produits
-                  </button>
-                  <button className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 transition-colors">
+                  </Link>
+                  <Link 
+                    href={'https://www.instagram.com/lamsa.po/?igsh=dncweHJrdWdlYWo1#'}
+                    target="_blank"
+                    className="cursor-pointer rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 transition-colors">
                     En savoir plus
-                  </button>
+                  </Link>
                 </div>
               </div>
               <div className="flex items-center justify-center">
@@ -97,7 +112,7 @@ export default function LandingPage() {
                   width={400}
                   height={400}
                   alt="Hero Image"
-                  className="rounded-lg object-cover shadow-md"
+                  className="rounded-lg object-cover shadow-md max-sm:w-[70%]"
                 />
               </div>
             </div>
@@ -110,7 +125,7 @@ export default function LandingPage() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div
-                  className="inline-block rounded-lg px-3 py-1 text-sm font-medium text-gray-900"
+                  className="inline-block rounded-lg px-3 py-1 text-sm font-medium text-white"
                   style={{ backgroundColor: primaryDarker }}
                 >
                   Nos Avantages
@@ -130,7 +145,7 @@ export default function LandingPage() {
                   className="flex h-16 w-16 items-center justify-center rounded-full"
                   style={{ backgroundColor: primaryDarker }}
                 >
-                  <Package className="h-8 w-8 text-gray-900" />
+                  <Package className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold" style={{ color: textDark }}>
                   Compact et Pratique
@@ -144,7 +159,7 @@ export default function LandingPage() {
                   className="flex h-16 w-16 items-center justify-center rounded-full"
                   style={{ backgroundColor: primaryDarker }}
                 >
-                  <Leaf className="h-8 w-8 text-gray-900" />
+                  <Leaf className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold" style={{ color: textDark }}>
                   Écologique
@@ -158,7 +173,7 @@ export default function LandingPage() {
                   className="flex h-16 w-16 items-center justify-center rounded-full"
                   style={{ backgroundColor: primaryDarker }}
                 >
-                  <ShieldCheck className="h-8 w-8 text-gray-900" />
+                  <ShieldCheck className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold" style={{ color: textDark }}>
                   Qualité Supérieure
@@ -172,7 +187,7 @@ export default function LandingPage() {
         </section>
 
         {/* Product Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32" style={{ backgroundColor: "#f8f6f3" }}>
+        <section className="w-full py-12 md:py-24 lg:py-32" style={{ backgroundColor: lightBackground }}>
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -184,34 +199,36 @@ export default function LandingPage() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto grid max-w-5xl items-center gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
               {[1, 2, 3].map((item) => (
                 <div key={item} className="overflow-hidden rounded-lg bg-white shadow-md">
-                  <div className="aspect-square relative">
+                  <div className="relative border-b border-black/15">
                     <Image
-                      src={`/placeholder.svg?height=300&width=300&text=Pochette ${item}`}
+                      src={productsImages[item - 1]}
                       alt={`Product Image`}
-                      fill
-                      className="object-cover"
+                      // fill
+                      className="object-contain"
                     />
                   </div>
                   <div className="p-4">
                     <h3 className="text-lg font-bold" style={{ color: textDark }}>
-                      Pochette {item}
+                      Starter Pack {item}
                     </h3>
                     <p className="text-sm text-gray-700">
-                      Pochette description {item}
+                      Pochette Lamsa
                     </p>
                     <div className="mt-4 flex items-center justify-between">
                       <span className="font-bold" style={{ color: textDark }}>
-                        120 MAD
+                        65 DH
                       </span>
-                      <button
-                        className="rounded-md px-3 py-1.5 text-sm font-medium text-gray-900 shadow-sm hover:opacity-90 transition-colors"
+                      <Link
+                        href={`https://l-artisan.youcan.store/products/starter-pack-${item}`}
+                        target="_blank"
+                        className="cursor-pointer rounded-md px-3 py-1.5 text-sm font-medium text-white shadow-sm hover:opacity-90 transition-colors"
                         style={{ backgroundColor: primaryDarker }}
                       >
                         Acheter
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -226,7 +243,7 @@ export default function LandingPage() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div
-                  className="inline-block rounded-lg px-3 py-1 text-sm font-medium text-gray-900"
+                  className="inline-block rounded-lg px-3 py-1 text-sm font-medium text-white"
                   style={{ backgroundColor: primaryDarker }}
                 >
                   Témoignages
@@ -242,16 +259,16 @@ export default function LandingPage() {
             <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-3">
               {[
                 {
-                  name: "Yassine El Farhany",
-                  text: "Ces pochettes sont devenues indispensables dans mon sac. Pratiques et écologiques, exactement ce que je cherchais!",
+                  name: "Achraf Naji",
+                  text: "Ces pochettes sont devenues indispensables dans ma valise. Pratiques et écologiques, exactement ce que je cherchais!",
                 },
                 {
-                  name: "Nour El Hayat",
-                  text: "La qualité des produits est exceptionnelle. Je recommande vivement Lamsa à toutes mes amies.",
+                  name: "Mohamed Amine Touati",
+                  text: "La qualité des produits est exceptionnelle. Je recommande vivement Lamsa à tous mes amis.",
                 },
                 {
-                  name: "Ayoub Douib",
-                  text: "J'ai offert une pochette à mon ami, il en est ravie. Service client impeccable!",
+                  name: "Malak Maheri",
+                  text: "J’ai offert une pochette à mon amie, elle en est ravie. Service client impeccable !",
                 },
               ].map((testimonial, index) => (
                 <div key={index} className="rounded-lg border border-gray-200 bg-white p-6 text-center shadow-md">
@@ -275,14 +292,15 @@ export default function LandingPage() {
         </section>
 
         {/* Eco-friendly Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32" style={{ backgroundColor: "#f8f6f3" }}>
+        <section className="w-full py-12 md:py-24 lg:py-32" style={{ backgroundColor: lightBackground }}>
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
+            {/* Large */}
+            <div className="max-sm:hidden grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
               <div className="flex items-center justify-center">
                 <Image
-                  src="/placeholder.svg?height=400&width=400&text=Eco-friendly"
-                  width={400}
-                  height={400}
+                  src={EcoFriendlyImage}
+                  width={300}
+                  height={300}
                   alt="Produits écologiques Lamsa"
                   className="rounded-lg object-cover shadow-md"
                 />
@@ -290,7 +308,7 @@ export default function LandingPage() {
               <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
                 <div className="space-y-2">
                   <div
-                    className="inline-block rounded-lg px-3 py-1 text-sm font-medium text-gray-900"
+                    className="inline-block rounded-lg px-3 py-1 text-sm font-medium text-white"
                     style={{ backgroundColor: primaryDarker }}
                   >
                     Engagement Écologique
@@ -317,14 +335,49 @@ export default function LandingPage() {
                     <span className="text-gray-700">Partenariats avec des producteurs locaux</span>
                   </li>
                 </ul>
-                <div className="flex justify-center lg:justify-start">
-                  <button
-                    className="w-fit rounded-md px-4 py-2 text-sm font-medium text-gray-900 shadow-sm hover:opacity-90 transition-colors"
+              </div>
+            </div>
+            {/* Mobile */}
+            <div className="hidden max-sm:grid gap-10 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
+              <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
+                <div className="space-y-2">
+                  <div
+                    className="inline-block rounded-lg px-3 py-1 text-sm font-medium text-white"
                     style={{ backgroundColor: primaryDarker }}
                   >
-                    En savoir plus
-                  </button>
+                    Engagement Écologique
+                  </div>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl" style={{ color: textDark }}>
+                    Notre engagement pour la planète
+                  </h2>
+                  <p className="max-w-[600px] text-gray-700 md:text-xl mx-auto lg:mx-0">
+                    Chez Lamsa, nous nous engageons à réduire notre impact environnemental à chaque étape de notre
+                    production.
+                  </p>
                 </div>
+                <ul className="space-y-2 mx-auto lg:mx-0">
+                  <li className="flex items-center gap-2 justify-center lg:justify-start">
+                    <Recycle className="h-5 w-5" style={{ color: primaryDarker }} />
+                    <span className="text-gray-700">Emballages recyclables et biodégradables</span>
+                  </li>
+                  <li className="flex items-center gap-2 justify-center lg:justify-start">
+                    <Leaf className="h-5 w-5" style={{ color: primaryDarker }} />
+                    <span className="text-gray-700">Ingrédients naturels et respectueux de l&apos;environnement</span>
+                  </li>
+                  <li className="flex items-center gap-2 justify-center lg:justify-start">
+                    <Users className="h-5 w-5" style={{ color: primaryDarker }} />
+                    <span className="text-gray-700">Partenariats avec des producteurs locaux</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex items-center justify-center">
+                <Image
+                  src={EcoFriendlyImage}
+                  width={300}
+                  height={300}
+                  alt="Produits écologiques Lamsa"
+                  className="rounded-lg object-cover shadow-md max-sm:w-[50%]"
+                />
               </div>
             </div>
           </div>
@@ -343,12 +396,14 @@ export default function LandingPage() {
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
-                <button
-                  className="w-full rounded-md px-4 py-2 text-sm font-medium text-gray-900 shadow-sm hover:opacity-90 transition-colors"
+                <Link
+                  href={'https://l-artisan.youcan.store/products/starter-pack-1'}
+                  target="_blank"
+                  className="block cursor-pointer w-full rounded-md px-4 py-2 text-sm font-medium text-white shadow-sm hover:opacity-90 transition-colors"
                   style={{ backgroundColor: primaryDarker }}
                 >
                   Commander maintenant
-                </button>
+                </Link>
                 <p className="text-xs text-gray-700">Livraison disponible partout au Maroc</p>
               </div>
             </div>
@@ -356,7 +411,7 @@ export default function LandingPage() {
         </section>
 
         {/* FAQ Section */}
-        <section id="faq" className="w-full py-12 md:py-24 lg:py-32" style={{ backgroundColor: "#f8f6f3" }}>
+        <section id="faq" className="select-none w-full py-12 md:py-24 lg:py-32" style={{ backgroundColor: lightBackground }}>
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -395,9 +450,7 @@ export default function LandingPage() {
                 </div>
                 {openAccordion === "item-1" && (
                   <div className="px-4 py-3 pt-0 text-gray-700 border-t border-gray-100">
-                    Nos pochettes contiennent une sélection de produits d&apos;hygiène essentiels comme des lingettes
-                    biodégradables, du gel hydroalcoolique, des mouchoirs, des protections périodiques, et d&apos;autres
-                    produits selon le type de pochette choisi.
+                    Nos pochettes contiennent une sélection de produits d’hygiène et de bien-être essentiels comme du body milk, du gel hydroalcoolique, du shampoing, un baume à lèvres, une lime à ongles, un miroir, ainsi qu’un flacon de parfum décanté.
                   </div>
                 )}
               </div>
@@ -490,8 +543,7 @@ export default function LandingPage() {
                 </div>
                 {openAccordion === "item-4" && (
                   <div className="px-4 py-3 pt-0 text-gray-700 border-t border-gray-100">
-                    Oui, nous proposons un service de personnalisation pour les commandes de plus de 10 pochettes.
-                    Contactez-nous pour plus d&apos;informations sur les options disponibles.
+                    Oui, nous proposons un service de personnalisation accessible dès la première pochette. Contactez-nous pour plus d’informations sur les options disponibles.
                   </div>
                 )}
               </div>
@@ -531,99 +583,12 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
-      <footer className="border-t bg-white">
-        <div className="container mx-auto flex flex-col gap-6 py-8 md:flex-row md:py-12 px-4">
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2">
-              <Package className="h-6 w-6" style={{ color: primaryDarker }} />
-              <span className="text-xl font-bold" style={{ color: textDark }}>
-                Lamsa
-              </span>
-            </div>
-            <p className="text-sm text-gray-700">Des solutions d&apos;hygiène nomades et écologiques pour tous.</p>
-          </div>
-          <div className="grid flex-1 grid-cols-2 gap-8 sm:grid-cols-3">
-            <div className="flex flex-col gap-2">
-              <h3 className="text-sm font-medium" style={{ color: textDark }}>
-                Produits
-              </h3>
-              <ul className="flex flex-col gap-2 text-sm text-gray-700">
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Pochettes
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Kits de voyage
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Offres spéciales
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h3 className="text-sm font-medium" style={{ color: textDark }}>
-                Entreprise
-              </h3>
-              <ul className="flex flex-col gap-2 text-sm text-gray-700">
-                <li>
-                  <Link href="#" className="hover:underline">
-                    À propos
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Notre mission
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Carrières
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h3 className="text-sm font-medium" style={{ color: textDark }}>
-                Contact
-              </h3>
-              <ul className="flex flex-col gap-2 text-sm text-gray-700">
-                <li>
-                  <Link href="#" className="hover:underline">
-                    contact@lamsa.ma
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    +212 5XX-XXXXXX
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:underline">
-                    Casablanca, Maroc
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <footer className="border-t border-black/5 bg-white">
         <div className="border-t py-6">
-          <div className="container mx-auto flex flex-col items-center justify-between gap-4 md:flex-row px-4">
-            <p className="text-center text-sm text-gray-700 md:text-left">
+          <div className="container mx-auto flex flex-col items-center justify-center gap-4 md:flex-row px-4">
+            <p className="text-center text-sm text-gray-700 md:text-left font-medium">
               &copy; {new Date().getFullYear()} Lamsa. Tous droits réservés.
             </p>
-            <div className="flex gap-4">
-              <Link href="#" className="text-sm text-gray-700 hover:underline">
-                Conditions d&apos;utilisation
-              </Link>
-              <Link href="#" className="text-sm text-gray-700 hover:underline">
-                Politique de confidentialité
-              </Link>
-            </div>
           </div>
         </div>
       </footer>
